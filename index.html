@@ -128,6 +128,81 @@
             h1 { font-size: 2rem; }
             .btn { display: block; margin: 10px auto; width: 80%; text-align: center; }
         }
+
+        /* --- NEW SLIDER STYLES --- */
+        .slider-container {
+            width: 100%;
+            overflow: hidden; /* Bahar ka content chupayega */
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .slider-track {
+            display: flex;
+            width: calc(300px * 4 + 80px); /* Adjust width based on cards */
+            animation: scroll 15s linear infinite;
+        }
+        
+        /* Hover karne par ruk jaye */
+        .slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Aadha move karega taaki loop lage */
+        }
+
+        .result-card {
+            width: 300px;
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 10px;
+            margin-right: 20px; /* Cards ke beech gap */
+            flex-shrink: 0;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .result-card:hover {
+            border-color: var(--accent-color);
+            transform: scale(1.02);
+        }
+
+        .result-img-box {
+            width: 100%;
+            height: 160px;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .result-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .result-content {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .result-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .tag {
+            background: #333;
+            color: #fff;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -167,24 +242,66 @@
         </div>
 
         <div style="text-align: center;">
-            <h2 class="section-title">Recent Result</h2>
+            <h2 class="section-title">Recent Results</h2>
+            <p style="color:#888; font-size:0.9rem; margin-top:-10px;">(Hover to pause)</p>
         </div>
         
-        <div class="card" style="margin-top: 40px; text-align: center;">
-            <h3>Gym Website Optimization</h3>
-            <img 
-        src="images/gym-optimization.jpg" 
-        alt="Gym Website Optimization Case Study"
-        style="
-            width: 100%;
-            max-width: 320px;
-            border-radius: 12px;
-            margin: 15px auto;
-            display: block;
-        "
-    >
-            <p>Reduced load time from <strong>7.2s</strong> to <strong>1.1s</strong> for a local business.</p>
-            <p style="color: #888; font-size: 0.9rem;">(Full case study available in portfolio)</p>
+        <div class="slider-container">
+            <div class="slider-track">
+                
+                <div class="result-card">
+                    <div class="result-img-box">
+                        <img src="https://placehold.co/600x400/111/00ff88?text=Gym+Before+After" alt="Gym Site">
+                    </div>
+                    <div class="result-content">
+                        <h3>Gym Speed Optimization</h3>
+                        <div style="margin-bottom:10px;">
+                            <span class="tag">Speed</span> <span class="tag">WP Rocket</span>
+                        </div>
+                        <p>Load time reduced from <strong>8.2s</strong> to <strong>1.1s</strong> using code cleanup & CDN.</p>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-img-box">
+                         <img src="https://placehold.co/600x400/111/00ff88?text=Automation+Flow" alt="Automation">
+                    </div>
+                    <div class="result-content">
+                        <h3>Real Estate Lead Flow</h3>
+                        <div style="margin-bottom:10px;">
+                            <span class="tag">Zapier</span> <span class="tag">Forms</span>
+                        </div>
+                        <p>Connected Elementor Form to WhatsApp. Client gets instant lead alerts.</p>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-img-box">
+                        <img src="https://placehold.co/600x400/111/00ff88?text=Gym+Before+After" alt="Gym Site">
+                    </div>
+                    <div class="result-content">
+                        <h3>Gym Speed Optimization</h3>
+                        <div style="margin-bottom:10px;">
+                            <span class="tag">Speed</span> <span class="tag">WP Rocket</span>
+                        </div>
+                        <p>Load time reduced from <strong>8.2s</strong> to <strong>1.1s</strong> using code cleanup & CDN.</p>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-img-box">
+                        <img src="https://placehold.co/600x400/111/00ff88?text=Automation+Flow" alt="Automation">
+                    </div>
+                    <div class="result-content">
+                        <h3>Real Estate Lead Flow</h3>
+                        <div style="margin-bottom:10px;">
+                            <span class="tag">Zapier</span> <span class="tag">Forms</span>
+                        </div>
+                        <p>Connected Elementor Form to WhatsApp. Client gets instant lead alerts.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <footer>
@@ -197,6 +314,7 @@
 </body>
 
 </html>
+
 
 
 
